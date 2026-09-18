@@ -6,15 +6,17 @@ Made for the Forever beta (client 1.60.1). Should work at launch unless Blizzard
 
 ## Install
 
-Copy the `RageKnowsNoBounds` folder into your AddOns folder:
+Grab the zip from [Releases](https://github.com/AlrikOlson/rage-knows-no-bounds/releases) (or CurseForge once it's up there) and unzip it into
 
 ```
-C:\Program Files (x86)\World of Warcraft\_classic_beta_\Interface\AddOns\RageKnowsNoBounds\
+C:\Program Files (x86)\World of Warcraft\_classic_beta_\Interface\AddOns\
 ```
+
+so you end up with `AddOns\RageKnowsNoBounds\RageKnowsNoBounds.toc`. If you're cloning instead, clone straight into a folder called `RageKnowsNoBounds` inside AddOns. The folder name matters.
 
 Then **restart the game**. `/reload` isn't enough the first time. WoW only picks up sound files that existed when the client started, so if you skip this you'll get a "could not play rage.ogg" message and no Dennis.
 
-If the addon list says it's out of date, tick "Load out of date AddOns". The Interface number in the .toc (16001) is a guess based on the client version. Nobody had published the real one when I wrote this.
+If the addon list says it's out of date, tick "Load out of date AddOns". The Interface number in the .toc (16001) is what other Forever addons are using but Blizzard hasn't confirmed it anywhere I could find.
 
 ## Usage
 
@@ -35,9 +37,9 @@ Only does anything on warriors. Loads fine on other classes, just sits there.
 
 ## How it works
 
-You'd think this is `if UnitPower("player") == UnitPowerMax("player")`. It isn't, and that's the reason this addon exists as more than 10 lines.
+You'd think this is `if UnitPower("player") == UnitPowerMax("player")`. It isn't, and that's the reason this addon is more than 10 lines.
 
-Forever runs the retail 12.x "secret value" system. Your own rage comes back from `UnitPower` as a secret number, and not just in combat, always. You can't compare it, do math on it, format it, or read it back out of a StatusBar or FontString. I tried all of those (`/rage debug` still lists them if you're curious). Every one comes back secret.
+Forever runs the retail 12.x "secret value" system. Your own rage comes back from `UnitPower` as a secret number, and not just in combat, always. You can't compare it, do math on it, format it, or read it back out of a StatusBar or FontString. I tried all of those. Every one comes back secret.
 
 So the addon never reads the number. Two things it does instead:
 
@@ -50,10 +52,19 @@ If Blizzard renames `SpikeAnim` or moves `FullPowerFrame`, the first path breaks
 
 `rage.ogg` is a 4.5 second clip from It's Always Sunny (S10E06, "The Gang Misses the Boat"). It's obviously not mine. It's here because the addon is pointless without it. If you want a different line, drop in any `.ogg` or `.mp3` at 44.1 kHz with the same name and restart the client.
 
+## Releasing
+
+Push a tag and GitHub Actions runs the [BigWigs packager](https://github.com/BigWigsMods/packager), which zips it, makes a GitHub release, and uploads to CurseForge if the `CF_API_KEY` secret is set and the toc has an `X-Curse-Project-ID`.
+
+```sh
+git tag v1.0.1
+git push origin v1.0.1
+```
+
 ## Known issues
 
 - Only tested on one warrior, on the beta, on Windows. Retail and Classic Era have different frame layouts and I haven't tried either.
-- The Interface number is a guess (see Install).
+- The Interface number is unconfirmed (see Install).
 - It fires once per cap. Sitting at 100 doesn't loop it. If you want that, change `trigger` in the Lua to also match `PulseAnim`.
 
 ## License

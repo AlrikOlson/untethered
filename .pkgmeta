@@ -1,0 +1,8 @@
+package-as: RageKnowsNoBounds
+enable-toc-creation: no
+ignore:
+  - README.md
+  - LICENSE
+  - .gitignore
+  - .pkgmeta
+  - .github
