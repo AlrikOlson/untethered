@@ -1,0 +1,9 @@
+## Interface: 16001
+## Title: Rage Knows No Bounds
+## Notes: Dennis screams at you when your warrior hits 100 rage.
+## Author: AlrikOlson
+## Version: 1.0.0
+## SavedVariables: RageKnowsNoBoundsDB
+## IconTexture: Interface\Icons\Ability_Warrior_InnerRage
+
+RageKnowsNoBounds.lua
