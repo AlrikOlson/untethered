@@ -1,4 +1,4 @@
-# RageKnowsNoBounds
+# Untethered
 
 WoW: Forever addon. When your warrior hits 100 rage, Dennis screams "I am untethered and my rage knows no bounds" at you. That's it. That's the addon.
 
@@ -6,13 +6,13 @@ Made for the Forever beta (client 1.60.1). Should work at launch unless Blizzard
 
 ## Install
 
-Grab the zip from [Releases](https://github.com/AlrikOlson/rage-knows-no-bounds/releases) (or CurseForge once it's up there) and unzip it into
+Grab the zip from [Releases](https://github.com/AlrikOlson/untethered/releases) (or CurseForge once it's up there) and unzip it into
 
 ```
 C:\Program Files (x86)\World of Warcraft\_classic_beta_\Interface\AddOns\
 ```
 
-so you end up with `AddOns\RageKnowsNoBounds\RageKnowsNoBounds.toc`. If you're cloning instead, clone straight into a folder called `RageKnowsNoBounds` inside AddOns. The folder name matters.
+so you end up with `AddOns\Untethered\Untethered.toc`. If you're cloning instead, clone straight into a folder called `Untethered` inside AddOns. The folder name matters.
 
 Then **restart the game**. `/reload` isn't enough the first time. WoW only picks up sound files that existed when the client started, so if you skip this you'll get a "could not play rage.ogg" message and no Dennis.
 
@@ -57,8 +57,8 @@ If Blizzard renames `SpikeAnim` or moves `FullPowerFrame`, the first path breaks
 Push a tag and GitHub Actions runs the [BigWigs packager](https://github.com/BigWigsMods/packager), which zips it, makes a GitHub release, and uploads to CurseForge if the `CF_API_KEY` secret is set and the toc has an `X-Curse-Project-ID`.
 
 ```sh
-git tag v1.0.1
-git push origin v1.0.1
+git tag v1.0.2
+git push origin v1.0.2
 ```
 
 ## Known issues
@@ -66,6 +66,7 @@ git push origin v1.0.1
 - Only tested on one warrior, on the beta, on Windows. Retail and Classic Era have different frame layouts and I haven't tried either.
 - The Interface number is unconfirmed (see Install).
 - It fires once per cap. Sitting at 100 doesn't loop it. If you want that, change `trigger` in the Lua to also match `PulseAnim`.
+- This used to be called RageKnowsNoBounds. If you installed that version, delete the old folder or you'll get Dennis in stereo.
 
 ## License
 

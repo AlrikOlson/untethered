@@ -1,9 +1,9 @@
 ## Interface: 16001
-## Title: Rage Knows No Bounds
+## Title: Untethered
 ## Notes: Dennis screams at you when your warrior hits 100 rage.
 ## Author: AlrikOlson
 ## Version: @project-version@
-## SavedVariables: RageKnowsNoBoundsDB
+## SavedVariables: UntetheredDB
 ## IconTexture: Interface\Icons\Ability_Warrior_InnerRage
 
-RageKnowsNoBounds.lua
+Untethered.lua

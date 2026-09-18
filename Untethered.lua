@@ -16,7 +16,7 @@ local verbose = false
 local isSecret = issecretvalue or function() return false end
 
 local function Print(msg)
-    print("|cffc41f3bRageKnowsNoBounds|r: " .. msg)
+    print("|cffc41f3bUntethered|r: " .. msg)
 end
 
 local function Readable(v)
@@ -195,8 +195,8 @@ f:RegisterEvent("PLAYER_LOGIN")
 f:SetScript("OnEvent", function(self, event, arg1, arg2)
     if event == "ADDON_LOADED" then
         if arg1 ~= ADDON then return end
-        RageKnowsNoBoundsDB = RageKnowsNoBoundsDB or {}
-        db = RageKnowsNoBoundsDB
+        UntetheredDB = UntetheredDB or {}
+        db = UntetheredDB
         for k, v in pairs(defaults) do
             if db[k] == nil then db[k] = v end
         end
@@ -243,8 +243,8 @@ local function Debug()
     print("  verbose: " .. tostring(verbose))
 end
 
-SLASH_RAGEKNOWSNOBOUNDS1 = "/rage"
-SlashCmdList.RAGEKNOWSNOBOUNDS = function(input)
+SLASH_UNTETHERED1 = "/rage"
+SlashCmdList.UNTETHERED = function(input)
     local cmd, rest = input:match("^(%S*)%s*(.-)$")
     cmd = cmd:lower()
     if cmd == "test" then

@@ -75,7 +75,7 @@
   </g>
 
   <!-- caption -->
-  <text x="256" y="462" text-anchor="middle"
+  <text x="256" y="466" text-anchor="middle"
         font-family="Impact, 'Arial Black', 'Helvetica Neue', Arial, sans-serif"
-        font-size="34" letter-spacing="6" fill="#f3d6b0" opacity="0.92">KNOWS NO BOUNDS</text>
+        font-size="44" letter-spacing="9" fill="#f3d6b0" opacity="0.95">UNTETHERED</text>
 </svg>
