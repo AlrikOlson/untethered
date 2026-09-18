@@ -66,7 +66,6 @@ git push origin v1.0.2
 - Only tested on one warrior, on the beta, on Windows. Retail and Classic Era have different frame layouts and I haven't tried either.
 - The Interface number is unconfirmed (see Install).
 - It fires once per cap. Sitting at 100 doesn't loop it. If you want that, change `trigger` in the Lua to also match `PulseAnim`.
-- This used to be called RageKnowsNoBounds. If you installed that version, delete the old folder or you'll get Dennis in stereo.
 
 ## License
 
