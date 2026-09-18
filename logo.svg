@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="42%" r="65%">
+      <stop offset="0" stop-color="#3a0708"/>
+      <stop offset="0.55" stop-color="#160404"/>
+      <stop offset="1" stop-color="#070202"/>
+    </radialGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ff6a4a"/>
+      <stop offset="0.45" stop-color="#e0201c"/>
+      <stop offset="1" stop-color="#7a0a0a"/>
+    </linearGradient>
+    <linearGradient id="gloss" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.35"/>
+      <stop offset="0.5" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="text" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff2d6"/>
+      <stop offset="0.5" stop-color="#ffb347"/>
+      <stop offset="1" stop-color="#d9481c"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="10" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softglow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- background -->
+  <rect width="512" height="512" rx="72" fill="url(#bg)"/>
+
+  <!-- radiating cracks / rage lines -->
+  <g stroke="#ff3b2e" stroke-width="3" stroke-linecap="round" opacity="0.55">
+    <path d="M256 256 L60 92"/>
+    <path d="M256 256 L452 92"/>
+    <path d="M256 256 L30 256"/>
+    <path d="M256 256 L482 256"/>
+    <path d="M256 256 L120 40"/>
+    <path d="M256 256 L392 40"/>
+    <path d="M256 256 L48 400"/>
+    <path d="M256 256 L464 400"/>
+  </g>
+  <g stroke="#ff8a5c" stroke-width="2" stroke-linecap="round" opacity="0.35">
+    <path d="M256 256 L200 30"/>
+    <path d="M256 256 L312 30"/>
+    <path d="M256 256 L20 180"/>
+    <path d="M256 256 L492 180"/>
+  </g>
+
+  <!-- the number, huge, glowing -->
+  <g filter="url(#glow)">
+    <text x="256" y="298" text-anchor="middle"
+          font-family="Impact, 'Arial Black', 'Helvetica Neue', Arial, sans-serif"
+          font-size="230" font-weight="900" letter-spacing="-6"
+          fill="url(#text)" stroke="#2a0404" stroke-width="6" paint-order="stroke fill">100</text>
+  </g>
+
+  <!-- the rage bar, pinned at max -->
+  <g transform="translate(64 352)">
+    <rect x="0" y="0" width="384" height="56" rx="12" fill="#0b0202" stroke="#5a1410" stroke-width="4"/>
+    <rect x="6" y="6" width="372" height="44" rx="8" fill="url(#bar)"/>
+    <rect x="6" y="6" width="372" height="22" rx="8" fill="url(#gloss)"/>
+    <!-- tick marks -->
+    <g stroke="#3a0505" stroke-width="2" opacity="0.6">
+      <path d="M99 6 V50"/><path d="M192 6 V50"/><path d="M285 6 V50"/>
+    </g>
+    <!-- spark at the far right, the "you are capped" moment -->
+    <g filter="url(#softglow)">
+      <rect x="360" y="-6" width="24" height="68" rx="6" fill="#ffe9b0" opacity="0.95"/>
+      <rect x="366" y="-2" width="12" height="60" rx="4" fill="#ffffff"/>
+    </g>
+  </g>
+
+  <!-- caption -->
+  <text x="256" y="462" text-anchor="middle"
+        font-family="Impact, 'Arial Black', 'Helvetica Neue', Arial, sans-serif"
+        font-size="34" letter-spacing="6" fill="#f3d6b0" opacity="0.92">KNOWS NO BOUNDS</text>
+</svg>

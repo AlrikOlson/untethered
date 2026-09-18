@@ -6,3 +6,5 @@ ignore:
   - .gitignore
   - .pkgmeta
   - .github
+  - logo.svg
+  - logo.png
